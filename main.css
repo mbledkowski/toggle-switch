@@ -1,0 +1,51 @@
+.toggleSwitchContainer {
+  display: flex;
+  cursor: pointer;
+}
+.switchBg {
+  display: block;
+  height: 37px;
+  width: 78px;
+  border-radius: 18.5px;
+}
+
+.switchBg.shadow {
+  background: none;
+  box-shadow: 0.75px 0.75px 10px 0px rgba(50, 50, 50, 0.5);
+  opacity: 1;
+}
+
+.switchBg.white {
+  position: absolute;
+  background: white;
+  opacity: 1;
+}
+
+.switchBg.green {
+  position: absolute;
+  background: #00a205;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.switchDot {
+  width: 25px;
+  height: 25px;
+  margin: 6px;
+  background: white;
+  position: absolute;
+  border-radius: 12.5px;
+  transition: transform .2s ease-out;
+  box-shadow: .75px .75px 3.8px 0px rgba(50, 50, 50, 0.45);
+}
+
+#toggleSwitch:checked ~ .switchDot {
+  transform: translateX(40px);
+}
+#toggleSwitch:checked ~ .switchBg.green {
+  opacity: 1 !important;
+}
+#toggleSwitch:checked ~ .switchBg.white {
+  opacity: 0 !important;
+  transition: opacity .2s step-end;
+}
